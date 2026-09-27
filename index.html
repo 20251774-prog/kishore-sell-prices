@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#c40818" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="description" content="Kishore Investments Levuka — offline invoice photo scan, sell pricing and FCCC Outer Island markup" />
+  <title>Kishore Sell Prices</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="hdr-row">
+      <h1>Kishore Sell Prices</h1>
+      <span class="ver">v2</span>
+    </div>
+    <div class="pills">
+      <span id="sw-status" class="pill warn">Offline: checking…</span>
+      <span id="data-status" class="pill warn">FCCC data…</span>
+      <span id="ocr-status" class="pill">OCR: not loaded</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= SCAN ================= -->
+    <section id="panel-scan" class="panel active" aria-label="Scan invoice">
+      <div class="card">
+        <h2>Scan supplier invoice</h2>
+        <div class="big-btns">
+          <label class="btn btn-primary btn-xl" for="cam-input">📷 Take photo</label>
+          <label class="btn btn-secondary btn-xl" for="gal-input">🖼️ Gallery</label>
+        </div>
+        <input id="cam-input" type="file" accept="image/*" capture="environment" hidden />
+        <input id="gal-input" type="file" accept="image/*" hidden />
+        <div class="opts">
+          <label class="chk"><input type="checkbox" id="opt-append" /> Add as next page of this invoice</label>
+          <label class="chk"><input type="checkbox" id="opt-bw" /> Strong black/white (for faint or shadowed photos)</label>
+          <label class="chk">Photo turn
+            <select id="opt-rot"><option value="auto" selected>Auto (tries sideways if unreadable)</option><option value="0">As taken</option><option value="90">Turn right 90°</option><option value="270">Turn left 90°</option><option value="180">Upside down 180°</option></select>
+          </label>
+        </div>
+        <div id="ocr-progress" class="progress hidden">
+          <div class="bar"><div id="ocr-bar" class="fill"></div></div>
+          <div id="ocr-msg" class="meta">Starting…</div>
+        </div>
+        <p class="meta">Lay the invoice flat, fill the screen, good light, no shadow. Everything runs on this phone — no internet needed.</p>
+      </div>
+
+      <div id="scan-editor" class="hidden"></div>
+    </section>
+
+    <!-- ================= PRICE (manual) ================= -->
+    <section id="panel-price" class="panel" aria-label="Manual pricing">
+      <div id="price-editor"></div>
+    </section>
+
+    <!-- ================= FCCC ================= -->
+    <section id="panel-fccc" class="panel" aria-label="FCCC lookup">
+      <div class="card" id="fccc-active-card">
+        <h2>FCCC list in use</h2>
+        <div id="fccc-active" class="act-grid"></div>
+        <div class="btn-row">
+          <button type="button" class="btn btn-primary" id="btn-upd-open">⬆️ Update FCCC list</button>
+          <button type="button" class="btn btn-secondary" id="btn-versions">🗂️ Saved lists</button>
+        </div>
+      </div>
+      <div class="card hidden" id="fccc-update">
+        <h2>Update FCCC list</h2>
+        <ol class="steps">
+          <li>Download the new FCCC <b>Basic Food</b> or <b>Produce</b> Master Price List PDF on this phone (fccc.gov.fj).</li>
+          <li>Choose the list type (or leave <b>Auto-detect</b>) and tap <b>Choose FCCC PDF</b>.</li>
+          <li>Check the preview: date, row counts and price changes. Then tap <b>Use this list</b>.</li>
+        </ol>
+        <label class="field">List type
+          <select id="upd-type">
+            <option value="auto" selected>Auto-detect from the PDF header</option>
+            <option value="basic">Basic Food Master Price List</option>
+            <option value="produce">Produce Summary Master Price List</option>
+          </select>
+        </label>
+        <label class="btn btn-primary btn-xl btn-block file-btn">📄 Choose FCCC PDF<input id="upd-pdf" type="file" accept="application/pdf,.pdf" hidden /></label>
+        <div id="upd-progress" class="progress hidden"><div class="bar"><div id="upd-bar" class="fill"></div></div><div id="upd-msg" class="meta">Starting…</div></div>
+        <details class="csv-box">
+          <summary>PDF won't read? Upload a CSV instead</summary>
+          <p class="meta">Make a spreadsheet with these columns (first row = headings), save as CSV:<br /><code>item, pack_wholesale, vl_urban_wholesale, pack_retail, oi_retail, category</code><br />One row per pack. Repeat the item name for each pack. Prices without $ sign. For produce use item like <code>Garlic – Turners &amp; Growers (Fiji) Ltd (Others)</code>.</p>
+          <label class="field">List date (as at)<input id="csv-date" type="date" /></label>
+          <div class="btn-row">
+            <button type="button" class="btn btn-secondary" id="csv-template">⬇️ Get CSV template</button>
+            <label class="btn btn-primary file-btn">📑 Choose CSV<input id="upd-csv" type="file" accept=".csv,text/csv,text/plain" hidden /></label>
+          </div>
+        </details>
+        <p class="meta">Biscuit and wheat-flour authorisations stay built in (29 Oct 2025 / 28 Feb 2025); they are not uploaded here.</p>
+        <div id="upd-preview"></div>
+      </div>
+      <div class="card hidden" id="fccc-versions">
+        <h2>Saved FCCC lists</h2>
+        <p class="meta">The list marked “In use” is used for auto-match and OI markup. Tap “Use this” to switch back to an older list.</p>
+        <div id="versions-list"></div>
+      </div>
+      <div class="card">
+        <h2>FCCC lookup (Outer Island)</h2>
+        <input id="fccc-search" class="search" type="search" placeholder="e.g. fmf soya 1L, sungrown, garlic turners, breakfast crackers" autocomplete="off" />
+        <div class="chips" id="fccc-filter">
+          <button type="button" class="chip active" data-src="">All</button>
+          <button type="button" class="chip" data-src="basic">Basic food</button>
+          <button type="button" class="chip" data-src="produce">Produce</button>
+          <button type="button" class="chip" data-src="auth">Biscuits + flour</button>
+        </div>
+        <p class="meta" id="fccc-meta"></p>
+      </div>
+      <div id="fccc-results"></div>
+    </section>
+
+    <!-- ================= HISTORY ================= -->
+    <section id="panel-history" class="panel" aria-label="History">
+      <div class="card">
+        <h2>Saved invoices</h2>
+        <p class="meta">Saved on this phone (works offline). Tap to reopen.</p>
+        <div class="btn-row">
+          <button type="button" id="btn-export" class="btn btn-ghost">Export all (backup file)</button>
+        </div>
+      </div>
+      <div id="history-list"></div>
+    </section>
+
+    <!-- ================= HELP ================= -->
+    <section id="panel-help" class="panel" aria-label="Help">
+      <div class="card help">
+        <h2>How to install &amp; use offline</h2>
+        <h3>Android phone (Chrome)</h3>
+        <ol>
+          <li>Open the app link (an <b>https://</b> address) in <b>Chrome</b> once while you have internet or Wi-Fi.</li>
+          <li>Wait until the top shows <b>“Offline ready”</b> (it downloads about 12 MB once: the OCR reader and FCCC lists).</li>
+          <li>Tap <b>⋮ menu → Install app</b> (or <b>Add to Home screen</b>).</li>
+          <li>Open <b>Kishore Sell</b> from the home screen. It now works in <b>airplane mode</b>.</li>
+          <li>Tap <b>Scan → Take photo</b> once while online to be sure the reader is cached (the OCR pill turns green).</li>
+        </ol>
+        <h3>iPhone (Safari)</h3>
+        <ol><li>Open the https link in Safari → Share → <b>Add to Home Screen</b>. Open once online, then it works offline.</li></ol>
+        <h3>Laptop</h3>
+        <ol>
+          <li>Unzip <code>kishore-offline.zip</code>. In that folder run <code>python3 -m http.server 8765</code> and open <code>http://localhost:8765</code> in Chrome/Edge → install icon in the address bar.</li>
+          <li>Or just double-click <code>index.html</code>. Pricing, FCCC lookup, history and OCR work; install/offline-cache needs http(s).</li>
+        </ol>
+        <h3>Using it</h3>
+        <ol>
+          <li><b>Scan</b>: take a photo. The app reads it on the phone and fills the review table.</li>
+          <li><b>Always check the table</b> against the photo (tap the photo to zoom). Fix item, qty, FOC, cost, disc %, VAT G/B, category. Add or delete lines.</li>
+          <li><b>FCCC</b> column: green ✓ = matched with high confidence (applied). Orange ⚠ = check and tap to choose, or mark “Not FCCC”. Grey = not FCCC.</li>
+          <li>Press <b>Price all</b>. Sell prices show in <span class="red">red</span>. <b>Copy</b> or <b>Share</b> the sell list into Viber.</li>
+          <li>Invoices are saved in <b>History</b> on this phone.</li>
+        </ol>
+        <h3>Locked pricing rules</h3>
+        <ul>
+          <li>Cost = net VEP after discount %. FOC of the same item blends into unit cost: total cost ÷ (qty + FOC).</li>
+          <li>VAT 12.5% added LAST, only on G items. B = zero-rated.</li>
+          <li>$5 freight per carton/bag, except Coca-Cola Europacific and FMF group (FMF Foods, FMF Snax, Biscuit Company, The Rice Company, Pea Industries). Never in FCCC cost.</li>
+          <li>Non-FCCC: standard 30% · spices 100% · Chow 5×80g / Maggi 80g 15% · Coke 25% no freight · jasmine rice 12% no freight · meat/lamb 20% per kg (lamb sausage 30%): cost/kg + $5 ÷ kg/ctn.</li>
+          <li>FCCC: OI markup % = OI max retail ÷ VL urban max wholesale (converted to the same retail pack) − 1. Retail RRP = unit cost × (1 + OI markup). Also shows FCCC OI RP (cap).</li>
+          <li>FMF RRP always added: FMF rice 7%, FMF flour 8%, coarse besan 10%, pea besan 10% (VAT last only if G).</li>
+          <li>Selling units: garlic per 400g · apples/oranges/pears per piece · eggs per tray (5 trays/ctn + $5) · Coke shows pack per carton.</li>
+        </ul>
+        <h3>New FCCC price list?</h3>
+        <ol>
+          <li>Download the new list PDF from fccc.gov.fj on the phone.</li>
+          <li>Go to <b>FCCC → Update FCCC list</b> (<a href="#" data-open-fccc="update">open it</a>), choose the PDF.</li>
+          <li>Check the date, counts and price changes in the preview, then tap <b>Use this list</b>. It works offline.</li>
+          <li>To go back to an older list: <b>FCCC → Saved lists</b> (<a href="#" data-open-fccc="versions">open</a>) → <b>Use this</b>.</li>
+          <li>If the PDF won't read (FCCC changed the layout), use <b>Upload a CSV</b> with the template.</li>
+          <li>Biscuit (29 Oct 2025) and wheat flour (28 Feb 2025) authorisations are built in and are not uploaded — they only change when FCCC issues a new authorisation.</li>
+        </ol>
+        <h3>FCCC data inside the app</h3>
+        <ul id="help-data"></ul>
+        <p class="meta">Quotes are a pricing aid. FCCC lists change — check the latest list before relying on a cap.</p>
+      </div>
+    </section>
+  </main>
+
+  <nav class="tabbar" role="tablist">
+    <button type="button" class="tab active" data-tab="scan">📷<span>Scan</span></button>
+    <button type="button" class="tab" data-tab="price">✏️<span>Price</span></button>
+    <button type="button" class="tab" data-tab="fccc">🔎<span>FCCC</span></button>
+    <button type="button" class="tab" data-tab="history">🗂️<span>History</span></button>
+    <button type="button" class="tab" data-tab="help">❓<span>Help</span></button>
+  </nav>
+
+  <!-- photo zoom -->
+  <div id="zoom" class="overlay hidden" role="dialog" aria-label="Invoice photo">
+    <div class="overlay-bar"><span class="meta">Pinch or tap to zoom</span><button type="button" class="btn btn-secondary" id="zoom-close">Close ✕</button></div>
+    <div class="zoom-scroll"><img id="zoom-img" alt="Invoice photo" /></div>
+  </div>
+
+  <!-- FCCC picker -->
+  <div id="picker" class="overlay hidden" role="dialog" aria-label="Choose FCCC match">
+    <div class="overlay-bar"><strong>Choose FCCC match</strong><button type="button" class="btn btn-secondary" id="picker-close">Close ✕</button></div>
+    <div class="picker-body">
+      <p id="picker-line" class="meta"></p>
+      <input id="picker-search" class="search" type="search" placeholder="Search FCCC list…" autocomplete="off" />
+      <button type="button" class="btn btn-danger btn-block" id="picker-not">Not FCCC (use normal markup)</button>
+      <div id="picker-results"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="core.js"></script>
+  <script src="fccc-pdf.js"></script>
+  <script src="fccc-update.js"></script>
+  <script src="ocr.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

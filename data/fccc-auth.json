@@ -1,0 +1,512 @@
+{
+"source": "FCCC Biscuit Authorisation effective 29 Oct 2025 (Schedule 1 VL urban wholesale VEP, Schedule 4 Levuka retail VIP) + FCCC Wheat Products Authorisation 28 Feb 2025 (Schedule 1 wholesale VEP, Schedule 4 Levuka retail)",
+"count": 29,
+"items": [
+{
+"n": "Cabin Crackers \u2013 Punjas brand 4.5kg pail",
+"c": "BISCUITS (auth 29 Oct 2025)",
+"v": 12.5,
+"p": null,
+"retail_vip": true,
+"r": [
+[
+"4.5kg plastic pail",
+22.74,
+26.15,
+"4.5kg plastic pail",
+27.12,
+30.96
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 Levuka retail VIP (VAT-incl). OI column here = Schedule 4 (Levuka)."
+},
+{
+"n": "Cabin Crackers \u2013 Punjas brand 2kg pail",
+"c": "BISCUITS (auth 29 Oct 2025)",
+"v": 12.5,
+"p": null,
+"retail_vip": true,
+"r": [
+[
+"2kg plastic pail",
+11.17,
+12.98,
+"2kg plastic pail",
+13.32,
+15.37
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 Levuka retail VIP (VAT-incl). OI column here = Schedule 4 (Levuka)."
+},
+{
+"n": "Breakfast Crackers \u2013 FMF brand 5kg pail",
+"c": "BISCUITS (auth 29 Oct 2025)",
+"v": 12.5,
+"p": null,
+"retail_vip": true,
+"r": [
+[
+"5kg plastic pail",
+27.56,
+31.94,
+"5kg plastic pail",
+32.87,
+37.82
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 Levuka retail VIP (VAT-incl). OI column here = Schedule 4 (Levuka)."
+},
+{
+"n": "Breakfast Crackers \u2013 Punjas brand 5kg pail",
+"c": "BISCUITS (auth 29 Oct 2025)",
+"v": 12.5,
+"p": null,
+"retail_vip": true,
+"r": [
+[
+"5kg plastic pail",
+26.14,
+30.31,
+"5kg plastic pail",
+31.17,
+35.89
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 Levuka retail VIP (VAT-incl). OI column here = Schedule 4 (Levuka)."
+},
+{
+"n": "Bakersfresh Breakfast Crackers \u2013 Punjas brand 3.5kg pail",
+"c": "BISCUITS (auth 29 Oct 2025)",
+"v": 12.5,
+"p": null,
+"retail_vip": true,
+"r": [
+[
+"3.5kg plastic pail",
+19.29,
+22.2,
+"3.5kg plastic pail",
+23.0,
+26.28
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 Levuka retail VIP (VAT-incl). OI column here = Schedule 4 (Levuka)."
+},
+{
+"n": "Breakfast Crackers \u2013 FMF brand 2kg pail",
+"c": "BISCUITS (auth 29 Oct 2025)",
+"v": 12.5,
+"p": null,
+"retail_vip": true,
+"r": [
+[
+"2kg plastic pail",
+11.98,
+13.85,
+"2kg plastic pail",
+14.28,
+16.4
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 Levuka retail VIP (VAT-incl). OI column here = Schedule 4 (Levuka)."
+},
+{
+"n": "Breakfast Crackers \u2013 Punjas brand 2kg pail",
+"c": "BISCUITS (auth 29 Oct 2025)",
+"v": 12.5,
+"p": null,
+"retail_vip": true,
+"r": [
+[
+"2kg plastic pail",
+11.31,
+13.24,
+"2kg plastic pail",
+13.48,
+15.68
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 Levuka retail VIP (VAT-incl). OI column here = Schedule 4 (Levuka)."
+},
+{
+"n": "Bakersfresh Breakfast Crackers \u2013 Punjas brand 1.7kg pail",
+"c": "BISCUITS (auth 29 Oct 2025)",
+"v": 12.5,
+"p": null,
+"retail_vip": true,
+"r": [
+[
+"1.7kg plastic pail",
+10.55,
+13.35,
+"1.7kg plastic pail",
+12.58,
+15.8
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 Levuka retail VIP (VAT-incl). OI column here = Schedule 4 (Levuka)."
+},
+{
+"n": "Premium Island Breakfast Crackers \u2013 Punjas brand 375g pkt",
+"c": "BISCUITS (auth 29 Oct 2025)",
+"v": 12.5,
+"p": null,
+"retail_vip": true,
+"r": [
+[
+"carton 20 x 375g",
+37.88,
+44.1,
+"375g pkt",
+2.26,
+2.61
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 Levuka retail VIP (VAT-incl). OI column here = Schedule 4 (Levuka)."
+},
+{
+"n": "Breakfast Crackers \u2013 Punjas brand 375g pkt",
+"c": "BISCUITS (auth 29 Oct 2025)",
+"v": 12.5,
+"p": null,
+"retail_vip": true,
+"r": [
+[
+"carton 20 x 375g",
+37.19,
+43.79,
+"375g pkt",
+2.22,
+2.59
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 Levuka retail VIP (VAT-incl). OI column here = Schedule 4 (Levuka)."
+},
+{
+"n": "Breakfast Crackers \u2013 FMF brand 375g pkt",
+"c": "BISCUITS (auth 29 Oct 2025)",
+"v": 12.5,
+"p": null,
+"retail_vip": true,
+"r": [
+[
+"carton 20 x 375g",
+35.51,
+41.39,
+"375g pkt",
+2.12,
+2.45
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 Levuka retail VIP (VAT-incl). OI column here = Schedule 4 (Levuka)."
+},
+{
+"n": "Bakersfresh Breakfast Crackers \u2013 Punjas brand 300g pkt",
+"c": "BISCUITS (auth 29 Oct 2025)",
+"v": 12.5,
+"p": null,
+"retail_vip": true,
+"r": [
+[
+"carton 18 x 300g",
+27.11,
+31.8,
+"300g pkt",
+1.8,
+2.1
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 Levuka retail VIP (VAT-incl). OI column here = Schedule 4 (Levuka)."
+},
+{
+"n": "Pacific Crown Breakfast Crackers \u2013 Ashabhai brand 300g pkt",
+"c": "BISCUITS (auth 29 Oct 2025)",
+"v": 12.5,
+"p": null,
+"retail_vip": true,
+"r": [
+[
+"carton 20 x 300g",
+36.92,
+43.01,
+"300g pkt",
+2.2,
+2.55
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 Levuka retail VIP (VAT-incl). OI column here = Schedule 4 (Levuka)."
+},
+{
+"n": "Breakfast Crackers \u2013 Punjas brand 200g pkt",
+"c": "BISCUITS (auth 29 Oct 2025)",
+"v": 12.5,
+"p": null,
+"retail_vip": true,
+"r": [
+[
+"carton 48 x 200g",
+49.17,
+56.39,
+"200g pkt",
+1.22,
+1.39
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 Levuka retail VIP (VAT-incl). OI column here = Schedule 4 (Levuka)."
+},
+{
+"n": "Flour (Normal) FMF factory pre-packed 50kg bag",
+"c": "WHEAT FLOUR (auth 28 Feb 2025)",
+"v": 0.0,
+"p": null,
+"r": [
+[
+"50kg bag",
+80.26,
+84.3,
+"50kg bag",
+82.26,
+86.41
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 (Labasa/Savusavu/Levuka) retail zero-rated. OI columns here = Schedule 4 Levuka."
+},
+{
+"n": "Flour (Normal) FMF factory pre-packed 25kg bag",
+"c": "WHEAT FLOUR (auth 28 Feb 2025)",
+"v": 0.0,
+"p": null,
+"r": [
+[
+"25kg bag",
+40.76,
+42.79,
+"25kg bag",
+41.78,
+43.86
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 (Labasa/Savusavu/Levuka) retail zero-rated. OI columns here = Schedule 4 Levuka."
+},
+{
+"n": "Flour (Normal) FMF factory pre-packed 10kg bag",
+"c": "WHEAT FLOUR (auth 28 Feb 2025)",
+"v": 0.0,
+"p": null,
+"r": [
+[
+"10kg bag",
+16.69,
+17.7,
+"10kg bag",
+17.52,
+18.58
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 (Labasa/Savusavu/Levuka) retail zero-rated. OI columns here = Schedule 4 Levuka."
+},
+{
+"n": "Flour (Normal) FMF factory pre-packed 5kg bag",
+"c": "WHEAT FLOUR (auth 28 Feb 2025)",
+"v": 0.0,
+"p": null,
+"r": [
+[
+"5kg bag",
+8.44,
+8.96,
+"5kg bag",
+8.86,
+9.4
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 (Labasa/Savusavu/Levuka) retail zero-rated. OI columns here = Schedule 4 Levuka."
+},
+{
+"n": "Flour (Normal) FMF factory pre-packed 4kg pack",
+"c": "WHEAT FLOUR (auth 28 Feb 2025)",
+"v": 0.0,
+"p": null,
+"r": [
+[
+"carton 6x4kg",
+40.68,
+42.74,
+"4kg pack",
+7.12,
+7.48
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 (Labasa/Savusavu/Levuka) retail zero-rated. OI columns here = Schedule 4 Levuka."
+},
+{
+"n": "Flour (Normal) FMF factory pre-packed 2kg pack",
+"c": "WHEAT FLOUR (auth 28 Feb 2025)",
+"v": 0.0,
+"p": null,
+"r": [
+[
+"carton 12x2kg",
+40.75,
+42.82,
+"2kg pack",
+3.57,
+3.75
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 (Labasa/Savusavu/Levuka) retail zero-rated. OI columns here = Schedule 4 Levuka."
+},
+{
+"n": "Flour (Normal) FMF factory pre-packed 1kg pack",
+"c": "WHEAT FLOUR (auth 28 Feb 2025)",
+"v": 0.0,
+"p": null,
+"r": [
+[
+"carton 24x1kg",
+41.27,
+43.34,
+"1kg pack",
+1.81,
+1.9
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 (Labasa/Savusavu/Levuka) retail zero-rated. OI columns here = Schedule 4 Levuka."
+},
+{
+"n": "Sharps FMF factory pre-packed 50kg bag",
+"c": "WHEAT FLOUR (auth 28 Feb 2025)",
+"v": 0.0,
+"p": null,
+"r": [
+[
+"50kg bag",
+83.96,
+88.03,
+"50kg bag",
+86.05,
+90.23
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 (Labasa/Savusavu/Levuka) retail zero-rated. OI columns here = Schedule 4 Levuka."
+},
+{
+"n": "Sharps FMF factory pre-packed 25kg bag",
+"c": "WHEAT FLOUR (auth 28 Feb 2025)",
+"v": 0.0,
+"p": null,
+"r": [
+[
+"25kg bag",
+42.61,
+44.65,
+"25kg bag",
+43.68,
+45.77
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 (Labasa/Savusavu/Levuka) retail zero-rated. OI columns here = Schedule 4 Levuka."
+},
+{
+"n": "Sharps FMF factory pre-packed 10kg bag",
+"c": "WHEAT FLOUR (auth 28 Feb 2025)",
+"v": 0.0,
+"p": null,
+"r": [
+[
+"10kg bag",
+17.43,
+18.44,
+"10kg bag",
+18.3,
+19.36
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 (Labasa/Savusavu/Levuka) retail zero-rated. OI columns here = Schedule 4 Levuka."
+},
+{
+"n": "Sharps FMF factory pre-packed 5kg bag",
+"c": "WHEAT FLOUR (auth 28 Feb 2025)",
+"v": 0.0,
+"p": null,
+"r": [
+[
+"5kg bag",
+8.81,
+9.33,
+"5kg bag",
+9.25,
+9.79
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 (Labasa/Savusavu/Levuka) retail zero-rated. OI columns here = Schedule 4 Levuka."
+},
+{
+"n": "Sharps FMF factory pre-packed 4kg pack",
+"c": "WHEAT FLOUR (auth 28 Feb 2025)",
+"v": 0.0,
+"p": null,
+"r": [
+[
+"carton 6x4kg",
+42.45,
+44.53,
+"4kg pack",
+7.43,
+7.79
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 (Labasa/Savusavu/Levuka) retail zero-rated. OI columns here = Schedule 4 Levuka."
+},
+{
+"n": "Sharps FMF factory pre-packed 2kg pack",
+"c": "WHEAT FLOUR (auth 28 Feb 2025)",
+"v": 0.0,
+"p": null,
+"r": [
+[
+"carton 12x2kg",
+42.52,
+44.6,
+"2kg pack",
+3.72,
+3.9
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 (Labasa/Savusavu/Levuka) retail zero-rated. OI columns here = Schedule 4 Levuka."
+},
+{
+"n": "Sharps FMF factory pre-packed 1kg pack",
+"c": "WHEAT FLOUR (auth 28 Feb 2025)",
+"v": 0.0,
+"p": null,
+"r": [
+[
+"carton 24x1kg",
+43.05,
+45.13,
+"1kg pack",
+1.88,
+1.97
+]
+],
+"note": "Sch 1 VL urban wholesale VEP; Sch 4 (Labasa/Savusavu/Levuka) retail zero-rated. OI columns here = Schedule 4 Levuka."
+},
+{
+"n": "Flour (Normal) loose per kg",
+"c": "WHEAT FLOUR (auth 28 Feb 2025)",
+"v": 0.0,
+"p": null,
+"r": [
+[
+null,
+null,
+null,
+"per kg",
+1.7,
+1.79
+]
+]
+}
+]
+}
